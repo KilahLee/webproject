@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"> 
+<head>
+  <meta charset="UTF-8">
+  <title>Insert title here</title>
+</head>
+<body>
+  <h2>[ BMI 체질량 지수 구하기 ] </h2>
+  <h3>회원명: [[ ${usrid} ]]</h3>
+  <form th:action="@{/calcBMI}" method="post">
+	<input type="hidden" id="usrid" th:name="${usrid}">
+    <label> 키 : 
+      <input type="text" id="height" name="height" placeholder="키 입력(cm)">
+    </label><br>
+    <label> 몸무게 : 
+      <input type="text" id="weight" name="weight" placeholder="몸무게 입력(kg)">
+    </label><br>
+    <input type="submit" value="측정"> <input type="reset" value="취소"> 
+  </form>
+<p> BMI 측정 결과 : [[ ${bmi}]] </p>
+<a th:href="@{/}">첫 화면</a>
+</body>
+</html>

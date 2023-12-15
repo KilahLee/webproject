@@ -5,17 +5,10 @@
   <title>Insert title here</title>
 </head>
 <body>
-  <h2>[ BMI 체질량 지수 구하기 ] </h2>
-  <form th:action="@{/calcBMI}" method="post">
-    <label> 키 : 
-      <input type="text" id="height" name="height" placeholder="키 입력(cm)">
-    </label><br>
-    <label> 몸무게 : 
-      <input type="text" id="weight" name="weight" placeholder="몸무게 입력(kg)">
-    </label><br>
-    <input type="submit" value="측정"> <input type="reset" value="취소"> 
-  </form>
-	<p> 측정일 : [[ ${now}]] </p>  
-	<p> BMI 측정 결과 : [[ ${bmi}]] </p>
+  <h2>[ Fitness 회원 관리 프로그램 ] </h2>
+  <div>
+	<a th:href="@{/join}">회원가입</a> <br>
+	<a th:href="@{/bmi}">체질량 지수구하기</a>
+  </div>
 </body>
 </html>

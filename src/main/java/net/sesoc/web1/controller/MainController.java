@@ -22,17 +22,7 @@ public class MainController {
 			@RequestParam(name = "weight") double weight,
 			Model model) {
 		
-		// 현재 날짜기능 추가 및 bmi값의 출력포맷을 수정
-		LocalDateTime today= LocalDateTime.now();
-		String now = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
-				       .format(today);
-		
-		double temp = height * 0.01;
-		double bmi = weight / Math.pow(temp, 2);
-		String userBMI = String.format("%.2f", bmi);
-		
-		model.addAttribute("now", now);
-		model.addAttribute("bmi", userBMI);
+
 		
 		return "index";
 	}
